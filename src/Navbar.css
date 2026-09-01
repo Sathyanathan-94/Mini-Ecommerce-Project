@@ -33,13 +33,23 @@ nav input::placeholder{
 }
 
 nav input:focus{
-    /* outline: none; */
     border-color: var(--primary-color);
 }
 
 nav a{
     text-decoration: none;
     color: var(--muted-color);
+}
+
+.Mob-Nav a{
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.Mob-Nav a:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-bg);
 }
 
 nav a:hover{
@@ -69,4 +79,49 @@ nav button:hover{
 
 .logo p{
     color: var(--text-color);
+}
+
+#HamButt{
+    display: none;
+    background-color: var(--primary-color);
+    width: 50px;
+    padding: 10px 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    transition: 0.2s;
+}
+
+.Mob-Nav{
+    display: none;
+}
+
+@media (max-width: 900px){
+    nav{
+        display: none;
+    }
+    #HamButt{
+        display: block;
+        background-color: gray;
+        width: 50px;
+        padding: 10px 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        transition: 0.2s;
+    }
+    .Mob-Nav{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--background-color);
+        border-top: 1px solid var(--border-color);
+        gap: 5px;
+        
+    }
+    header{
+        flex-wrap: wrap;
+    }
 }

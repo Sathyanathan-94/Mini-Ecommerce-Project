@@ -1,6 +1,8 @@
 import  "./Navbar.css";
+import { useState } from "react";
 
 function Navbar(){
+  const [menuOpen, setMenuOpen] = useState(false);
   return(
     <header>
       <div className="logo">
@@ -16,7 +18,20 @@ function Navbar(){
         <input type="text" placeholder="Search" />
         <a href="">Cart</a>
         <button>Login</button>
-      </nav>      
+      </nav>
+      <button id="HamButt" onClick={()=>setMenuOpen(!menuOpen)}>
+        {menuOpen ? "✕" : "☰"}
+      </button>
+      {menuOpen && (
+        <nav className="Mob-Nav">
+          <a href="">Home</a>
+          <a href="">Products</a>
+          <a href="">Categories</a>
+          <a href="">Cart</a>
+          <a href="">Search</a>
+          <a href="">Login</a>
+        </nav>
+      )}
     </header>
   );
 }
