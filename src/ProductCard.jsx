@@ -1,14 +1,42 @@
-function AddToCart(brand,model,price_inr){
-    console.log(brand,model,"-",price_inr, "Added to Cart");
-}
+import "./ProductCard.css";
 
-function ProductCard({id, brand, model, price_inr}){
-    return(
-        <div>
-            <h3>{brand}</h3>
-            <p>{model}</p>
-            <h4>{price_inr}</h4>
-            <button onClick={()=>AddToCart(brand,model,price_inr)}>Add To Cart</button>
+function ProductCard({ title, description, rating, reviews, price, image }) {
+    return (
+        <div className="productcard-section">
+
+            <div className="product-image">
+                <img
+                    src={image}
+                    alt={title}
+                />
+            </div>
+
+            <div className="product-content">
+
+                <h3 className="product-title">
+                    {title}
+                </h3>
+
+                <p className="product-desc">
+                    {description}
+                </p>
+
+                <div className="product-review">
+                    <span>
+                        {rating} ({reviews})
+                    </span>
+                </div>
+
+                <div className="product-price">
+                    <h4>₹ {price}</h4>
+                </div>
+
+                <button className="add-to-cart">
+                    Add to Cart
+                </button>
+
+            </div>
+
         </div>
     );
 }
