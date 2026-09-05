@@ -49,6 +49,7 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 15px;
+    color: var(--text-color);
 }
 
 .product-desc {
@@ -90,4 +91,12 @@
     grid-template-columns: repeat(4, 250px);
     gap: 50px;
     justify-content: center;
+}
+
+@media (max-width:900px){
+    .products-grid{
+        /* grid-template-columns: repeat(1,250px); */
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
 }
